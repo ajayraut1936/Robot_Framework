@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20220615 10:38:37.214" rpa="false">
+<suite id="s1" name="API TC1" source="C:\Users\erauaja\PycharmProjects\API_Testing\Requests\BR_Folder\API_TC1.robot">
+<kw name="TC_001 Get Student Details [GET]123" type="setup">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>TC_001</arg>
+<arg>${tc1_url}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:37.631" level="INFO">Creating Session using : alias=TC_001, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220615 10:38:37.631" endtime="20220615 10:38:37.647"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>TC_001</arg>
+<arg>/api/studentsDetails/</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.099" level="INFO">Get Request using : alias=TC_001, uri=/api/studentsDetails/, headers=None json=None</msg>
+<msg timestamp="20220615 10:38:38.099" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20220615 10:38:38.099" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220615 10:38:37.647" endtime="20220615 10:38:38.099"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220615 10:38:38.099" endtime="20220615 10:38:38.099"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.099" level="INFO">200</msg>
+<status status="PASS" starttime="20220615 10:38:38.099" endtime="20220615 10:38:38.099"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.headers}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.099" level="INFO">{'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Wed, 15 Jun 2022 05:08:39 GMT', 'Content-Length': '11596'}</msg>
+<status status="PASS" starttime="20220615 10:38:38.099" endtime="20220615 10:38:38.099"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.116" level="INFO">[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673167,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673166,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673165,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673164,"first_name":"Testing","middle_name":"world","last_name":"TestingWorld","date_of_birth":"12/12/12"},{"id":2673162,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673160,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673156,"first_name":"TestPUT01","middle_name":"Test_PUT01","last_name":"TestPUT01","date_of_birth":"01/01/1999"},{"id":2673155,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673154,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673153,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673152,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673151,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673150,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673149,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673148,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673147,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673146,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673145,"first_name":"test","middle_name":"123","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673144,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673142,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673141,"first_name":"TestFirstName","middle_name":"TestMiddleName","last_name":"TestLastName","date_of_birth":"01/01/1979"},{"id":2673140,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673139,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673138,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673137,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673136,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673135,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673134,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673133,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673132,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673131,"first_name":"Rohit","middle_name":"Kumar","last_name":"Kashyap","date_of_birth":"01/01/2002"},{"id":2673129,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673128,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673127,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673126,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673125,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673124,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673123,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673122,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673121,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673116,"first_name":"Piku","middle_name":"P","last_name":"Patra","date_of_birth":"10/10/10"},{"id":2673115,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":2673114,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673113,"first_name":"tiya","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673112,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673111,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673110,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673109,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673108,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673107,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673106,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673105,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673104,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673103,"first_name":"Ricky","middle_name":"ponting","last_name":"star","date_of_birth":"01/11/1985"},{"id":2673102,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673101,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673100,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673099,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673098,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673097,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673096,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673095,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673094,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673093,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673092,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673091,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673090,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673089,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673088,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673087,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673086,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673085,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673084,"first_name":"jeevan","middle_name":"theja","last_name":"velduti","date_of_birth":"20may1991"},{"id":2673083,"first_name":"A","middle_name":"B","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]</msg>
+<status status="PASS" starttime="20220615 10:38:38.115" endtime="20220615 10:38:38.116"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.116" level="INFO">${res} = [{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":...</msg>
+<status status="PASS" starttime="20220615 10:38:38.116" endtime="20220615 10:38:38.116"></status>
+</kw>
+<status status="PASS" starttime="20220615 10:38:37.631" endtime="20220615 10:38:38.116"></status>
+</kw>
+<test id="s1-t1" name="TC_001 Get Student Details [GET]">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>TC_001</arg>
+<arg>${tc1_url}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.116" level="INFO">Creating Session using : alias=TC_001, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220615 10:38:38.116" endtime="20220615 10:38:38.116"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>TC_001</arg>
+<arg>/api/studentsDetails/</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.584" level="INFO">Get Request using : alias=TC_001, uri=/api/studentsDetails/, headers=None json=None</msg>
+<msg timestamp="20220615 10:38:38.584" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20220615 10:38:38.584" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220615 10:38:38.116" endtime="20220615 10:38:38.584"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220615 10:38:38.584" endtime="20220615 10:38:38.584"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.584" level="INFO">200</msg>
+<status status="PASS" starttime="20220615 10:38:38.584" endtime="20220615 10:38:38.584"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.headers}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.584" level="INFO">{'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Wed, 15 Jun 2022 05:08:39 GMT', 'Content-Length': '11596'}</msg>
+<status status="PASS" starttime="20220615 10:38:38.584" endtime="20220615 10:38:38.584"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.584" level="INFO">[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673167,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673166,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673165,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673164,"first_name":"Testing","middle_name":"world","last_name":"TestingWorld","date_of_birth":"12/12/12"},{"id":2673162,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673160,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673156,"first_name":"TestPUT01","middle_name":"Test_PUT01","last_name":"TestPUT01","date_of_birth":"01/01/1999"},{"id":2673155,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673154,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673153,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673152,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673151,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673150,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673149,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673148,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673147,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673146,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673145,"first_name":"test","middle_name":"123","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673144,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673142,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673141,"first_name":"TestFirstName","middle_name":"TestMiddleName","last_name":"TestLastName","date_of_birth":"01/01/1979"},{"id":2673140,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673139,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673138,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673137,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673136,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673135,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673134,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673133,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673132,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673131,"first_name":"Rohit","middle_name":"Kumar","last_name":"Kashyap","date_of_birth":"01/01/2002"},{"id":2673129,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673128,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673127,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673126,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673125,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673124,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673123,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673122,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673121,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673116,"first_name":"Piku","middle_name":"P","last_name":"Patra","date_of_birth":"10/10/10"},{"id":2673115,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":2673114,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673113,"first_name":"tiya","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673112,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673111,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673110,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673109,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673108,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673107,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673106,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673105,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673104,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673103,"first_name":"Ricky","middle_name":"ponting","last_name":"star","date_of_birth":"01/11/1985"},{"id":2673102,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673101,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673100,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673099,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673098,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673097,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673096,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673095,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673094,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673093,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673092,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673091,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673090,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673089,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673088,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673087,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673086,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673085,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673084,"first_name":"jeevan","middle_name":"theja","last_name":"velduti","date_of_birth":"20may1991"},{"id":2673083,"first_name":"A","middle_name":"B","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]</msg>
+<status status="PASS" starttime="20220615 10:38:38.584" endtime="20220615 10:38:38.584"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.584" level="INFO">${res} = [{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":...</msg>
+<status status="PASS" starttime="20220615 10:38:38.584" endtime="20220615 10:38:38.584"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>Ajay</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.600" level="FAIL">'[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673167,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673166,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673165,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673164,"first_name":"Testing","middle_name":"world","last_name":"TestingWorld","date_of_birth":"12/12/12"},{"id":2673162,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673160,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673156,"first_name":"TestPUT01","middle_name":"Test_PUT01","last_name":"TestPUT01","date_of_birth":"01/01/1999"},{"id":2673155,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673154,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673153,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673152,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673151,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673150,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673149,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673148,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673147,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673146,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673145,"first_name":"test","middle_name":"123","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673144,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673142,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673141,"first_name":"TestFirstName","middle_name":"TestMiddleName","last_name":"TestLastName","date_of_birth":"01/01/1979"},{"id":2673140,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673139,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673138,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673137,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673136,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673135,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673134,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673133,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673132,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673131,"first_name":"Rohit","middle_name":"Kumar","last_name":"Kashyap","date_of_birth":"01/01/2002"},{"id":2673129,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673128,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673127,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673126,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673125,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673124,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673123,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673122,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673121,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673116,"first_name":"Piku","middle_name":"P","last_name":"Patra","date_of_birth":"10/10/10"},{"id":2673115,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":2673114,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673113,"first_name":"tiya","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673112,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673111,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673110,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673109,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673108,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673107,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673106,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673105,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673104,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673103,"first_name":"Ricky","middle_name":"ponting","last_name":"star","date_of_birth":"01/11/1985"},{"id":2673102,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673101,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673100,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673099,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673098,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673097,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673096,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673095,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673094,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673093,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673092,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673091,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673090,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673089,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673088,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673087,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673086,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673085,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673084,"first_name":"jeevan","middle_name":"theja","last_name":"velduti","date_of_birth":"20may1991"},{"id":2673083,"first_name":"A","middle_name":"B","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]' does not contain 'Ajay'</msg>
+<status status="FAIL" starttime="20220615 10:38:38.584" endtime="20220615 10:38:38.600"></status>
+</kw>
+<status status="FAIL" starttime="20220615 10:38:38.116" endtime="20220615 10:38:38.600" critical="yes">'[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":267316...
+    [ Message content over the limit has been removed. ]
+...":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]' does not contain 'Ajay'</status>
+</test>
+<test id="s1-t2" name="TC_002 Get Student Details of recoed[GET][2662591]">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>TC_002</arg>
+<arg>${tc1_url}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.600" level="INFO">Creating Session using : alias=TC_002, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220615 10:38:38.600" endtime="20220615 10:38:38.600"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>TC_001</arg>
+<arg>/api/studentsDetails/${tc_002_number}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.765" level="INFO">Get Request using : alias=TC_001, uri=/api/studentsDetails/2662591, headers=None json=None</msg>
+<msg timestamp="20220615 10:38:38.765" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20220615 10:38:38.765" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220615 10:38:38.600" endtime="20220615 10:38:38.765"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220615 10:38:38.765" endtime="20220615 10:38:38.765"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.765" level="INFO">200</msg>
+<status status="PASS" starttime="20220615 10:38:38.765" endtime="20220615 10:38:38.765"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.headers}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.765" level="INFO">{'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Wed, 15 Jun 2022 05:08:39 GMT', 'Content-Length': '134'}</msg>
+<status status="PASS" starttime="20220615 10:38:38.765" endtime="20220615 10:38:38.765"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.765" level="INFO">{"status":"true","data":{"id":2662591,"first_name":"Gillian","middle_name":"Lestor","last_name":"Marvy","date_of_birth":"12/12/1992"}}</msg>
+<status status="PASS" starttime="20220615 10:38:38.765" endtime="20220615 10:38:38.765"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.781" level="INFO">${res} = {"status":"true","data":{"id":2662591,"first_name":"Gillian","middle_name":"Lestor","last_name":"Marvy","date_of_birth":"12/12/1992"}}</msg>
+<status status="PASS" starttime="20220615 10:38:38.765" endtime="20220615 10:38:38.781"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>should contain</arg>
+<arg>${res}</arg>
+<arg>Gillian</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res}</arg>
+<arg>Gillian</arg>
+</arguments>
+<status status="PASS" starttime="20220615 10:38:38.781" endtime="20220615 10:38:38.781"></status>
+</kw>
+<msg timestamp="20220615 10:38:38.781" level="INFO">${res} = True</msg>
+<status status="PASS" starttime="20220615 10:38:38.781" endtime="20220615 10:38:38.781"></status>
+</kw>
+<status status="PASS" starttime="20220615 10:38:38.600" endtime="20220615 10:38:38.781" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC_003 Post Student Derails[create new student]">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>TC_003</arg>
+<arg>${tc1_url}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:38.785" level="INFO">Creating Session using : alias=TC_003, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220615 10:38:38.785" endtime="20220615 10:38:38.785"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.785" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220615 10:38:38.785" endtime="20220615 10:38:38.785"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>first_name=Ajay</arg>
+<arg>middle_name=Savata</arg>
+<arg>last_name=Raut</arg>
+<arg>date_of_birth=23-05-98</arg>
+</arguments>
+<assign>
+<var>${body}</var>
+</assign>
+<msg timestamp="20220615 10:38:38.785" level="INFO">${body} = {'first_name': 'Ajay', 'middle_name': 'Savata', 'last_name': 'Raut', 'date_of_birth': '23-05-98'}</msg>
+<status status="PASS" starttime="20220615 10:38:38.785" endtime="20220615 10:38:38.785"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>TC_003</arg>
+<arg>api/studentsDetails</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:39.386" level="INFO">Post Request using : alias=TC_003, uri=api/studentsDetails, data={"first_name": "Ajay", "middle_name": "Savata", "last_name": "Raut", "date_of_birth": "23-05-98"}, headers={'Content-Type': 'application/json'}, files=None, allow_redirects=True </msg>
+<msg timestamp="20220615 10:38:39.386" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20220615 10:38:39.386" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220615 10:38:38.785" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="INFO">&lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.status_code}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="INFO">200</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="INFO">[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673167,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673166,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673165,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673164,"first_name":"Testing","middle_name":"world","last_name":"TestingWorld","date_of_birth":"12/12/12"},{"id":2673162,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673160,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673156,"first_name":"TestPUT01","middle_name":"Test_PUT01","last_name":"TestPUT01","date_of_birth":"01/01/1999"},{"id":2673155,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673154,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673153,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673152,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673151,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673150,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673149,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673148,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673147,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673146,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673145,"first_name":"test","middle_name":"123","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673144,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673142,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673141,"first_name":"TestFirstName","middle_name":"TestMiddleName","last_name":"TestLastName","date_of_birth":"01/01/1979"},{"id":2673140,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673139,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673138,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673137,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673136,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673135,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673134,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673133,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673132,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673131,"first_name":"Rohit","middle_name":"Kumar","last_name":"Kashyap","date_of_birth":"01/01/2002"},{"id":2673129,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673128,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673127,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673126,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673125,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673124,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673123,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673122,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673121,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673116,"first_name":"Piku","middle_name":"P","last_name":"Patra","date_of_birth":"10/10/10"},{"id":2673115,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":2673114,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673113,"first_name":"tiya","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673112,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673111,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673110,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673109,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673108,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673107,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673106,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673105,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673104,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673103,"first_name":"Ricky","middle_name":"ponting","last_name":"star","date_of_birth":"01/11/1985"},{"id":2673102,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673101,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673100,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673099,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673098,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673097,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673096,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673095,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673094,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673093,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673092,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673091,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673090,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673089,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673088,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673087,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673086,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673085,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673084,"first_name":"jeevan","middle_name":"theja","last_name":"velduti","date_of_birth":"20may1991"},{"id":2673083,"first_name":"A","middle_name":"B","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${res.headers}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="INFO">{'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/8.5', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Wed, 15 Jun 2022 05:08:40 GMT', 'Content-Length': '11596'}</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${res.content}</arg>
+</arguments>
+<assign>
+<var>${res1}</var>
+</assign>
+<msg timestamp="20220615 10:38:39.386" level="INFO">${res1} = [{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":...</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res1}</arg>
+<arg>Ajay</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="FAIL">'[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673167,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673166,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673165,"first_name":"Jawad","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673164,"first_name":"Testing","middle_name":"world","last_name":"TestingWorld","date_of_birth":"12/12/12"},{"id":2673162,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673160,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673156,"first_name":"TestPUT01","middle_name":"Test_PUT01","last_name":"TestPUT01","date_of_birth":"01/01/1999"},{"id":2673155,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673154,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673153,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673152,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673151,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673150,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673149,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673148,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673147,"first_name":"TestFirstName2","middle_name":"TestMiddleName2","last_name":"TestLastName2","date_of_birth":"01/01/1979"},{"id":2673146,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673145,"first_name":"test","middle_name":"123","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673144,"first_name":"TestFirstName1","middle_name":"TestMiddleName1","last_name":"TestLastName1","date_of_birth":"01/01/1979"},{"id":2673142,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673141,"first_name":"TestFirstName","middle_name":"TestMiddleName","last_name":"TestLastName","date_of_birth":"01/01/1979"},{"id":2673140,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673139,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673138,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673137,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673136,"first_name":"Test1","middle_name":"test2","last_name":"Test3","date_of_birth":"1th January, 1990"},{"id":2673135,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673134,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673133,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673132,"first_name":"Akash","middle_name":"Kumar","last_name":"Rana","date_of_birth":"01/01/2002"},{"id":2673131,"first_name":"Rohit","middle_name":"Kumar","last_name":"Kashyap","date_of_birth":"01/01/2002"},{"id":2673129,"first_name":"chameli","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673128,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673127,"first_name":"mmmm0","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673126,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673125,"first_name":"llllk","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673124,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673123,"first_name":"1222222","middle_name":"twobhushan","last_name":"Tiyafuse","date_of_birth":"12/12/2010"},{"id":2673122,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673121,"first_name":null,"middle_name":"A","last_name":"World","date_of_birth":"12/03/2022"},{"id":2673116,"first_name":"Piku","middle_name":"P","last_name":"Patra","date_of_birth":"10/10/10"},{"id":2673115,"first_name":null,"middle_name":null,"last_name":null,"date_of_birth":null},{"id":2673114,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673113,"first_name":"tiya","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673112,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673111,"first_name":"232323","middle_name":null,"last_name":" okok","date_of_birth":"12/12/1990"},{"id":2673110,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673109,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673108,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673107,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673106,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673105,"first_name":"ashok","middle_name":"kumar","last_name":"bommu","date_of_birth":"20/6/1994"},{"id":2673104,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673103,"first_name":"Ricky","middle_name":"ponting","last_name":"star","date_of_birth":"01/11/1985"},{"id":2673102,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673101,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673100,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673099,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673098,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673097,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673096,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"},{"id":2673095,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673094,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673093,"first_name":"Tesing1","middle_name":"676567611","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673092,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673091,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673090,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673089,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673088,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673087,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673086,"first_name":"g1","middle_name":"theja","last_name":"velduti","date_of_birth":"20sept1991"},{"id":2673085,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673084,"first_name":"jeevan","middle_name":"theja","last_name":"velduti","date_of_birth":"20may1991"},{"id":2673083,"first_name":"A","middle_name":"B","last_name":"${LName}","date_of_birth":"12/12/1990"},{"id":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]' does not contain 'Ajay'</msg>
+<status status="FAIL" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<status status="FAIL" starttime="20220615 10:38:38.785" endtime="20220615 10:38:39.386" critical="yes">'[{"id":2673181,"first_name":"chanda","middle_name":"maganlal","last_name":"shah","date_of_birth":"15/05/1990"},{"id":2673180,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673179,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673178,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673177,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673176,"first_name":"John","middle_name":"j","last_name":"ABCD","date_of_birth":"12/12/1933"},{"id":2673175,"first_name":"kranti","middle_name":"hiren","last_name":"mehta","date_of_birth":"17/05/1974"},{"id":2673174,"first_name":"shanti","middle_name":"ramesh","last_name":"shah","date_of_birth":"17/08/1974"},{"id":2673173,"first_name":"mehul","middle_name":"ashwin","last_name":"kandhia","date_of_birth":"28/05/1993"},{"id":2673171,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673170,"first_name":"Test","middle_name":"World","last_name":"Test World","date_of_birth":"24/11/1984"},{"id":2673169,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":2673168,"first_name":"Siam","middle_name":"Ahmed","last_name":"Patwary","date_of_birth":"29/10/1995"},{"id":267316...
+    [ Message content over the limit has been removed. ]
+...":2673082,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673081,"first_name":"Denis","middle_name":"Iulian","last_name":"Stefan","date_of_birth":"11/05/2001"},{"id":2673080,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673079,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673078,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673077,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673076,"first_name":"sachin","middle_name":"rohit","last_name":"patil","date_of_birth":"12/12/2013"},{"id":2673075,"first_name":"Rahul11","middle_name":"Chand11","last_name":"Katoch11","date_of_birth":"01/11/1985"},{"id":2673074,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673073,"first_name":"Rahul","middle_name":"Chand","last_name":"Katoch","date_of_birth":"01/11/1985"},{"id":2673072,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673071,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":2673070,"first_name":"{{fist_name}}","middle_name":"{{middle_name}}","last_name":"{{last_name}}","date_of_birth":"{{date_of_birth}}"}]' does not contain 'Ajay'</status>
+</test>
+<test id="s1-t4" name="TC_005 Put Request Student Data Update">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>TC_003</arg>
+<arg>${tc1_url}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="INFO">Creating Session using : alias=TC_003, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20220615 10:38:39.386" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>first_name=Vijay</arg>
+<arg>middle_name=Savata</arg>
+<arg>last_name=Raut</arg>
+<arg>date_of_birth=23-05-98</arg>
+</arguments>
+<assign>
+<var>${body}</var>
+</assign>
+<msg timestamp="20220615 10:38:39.386" level="INFO">${body} = {'first_name': 'Vijay', 'middle_name': 'Savata', 'last_name': 'Raut', 'date_of_birth': '23-05-98'}</msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>TC_003</arg>
+<arg>api/studentsDetails/${Post_id123}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:39.386" level="FAIL">Variable '${Post_id123}' not found.</msg>
+<status status="FAIL" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<status status="FAIL" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386" critical="yes">Variable '${Post_id123}' not found.</status>
+</test>
+<test id="s1-t5" name="TC_006 Delete Request by Student id">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>TC_006</arg>
+<arg>${tc1_url}</arg>
+</arguments>
+<msg timestamp="20220615 10:38:39.386" level="INFO">Creating Session using : alias=TC_006, url=http://thetestingworldapi.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>TC_006</arg>
+<arg>api/studentsDetails/${Post_id123}</arg>
+</arguments>
+<assign>
+<var>${res}</var>
+</assign>
+<msg timestamp="20220615 10:38:39.386" level="FAIL">Variable '${Post_id123}' not found.</msg>
+<status status="FAIL" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386"></status>
+</kw>
+<status status="FAIL" starttime="20220615 10:38:39.386" endtime="20220615 10:38:39.386" critical="yes">Variable '${Post_id123}' not found.</status>
+</test>
+<status status="FAIL" starttime="20220615 10:38:37.214" endtime="20220615 10:38:39.402"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="4">Critical Tests</stat>
+<stat pass="1" fail="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="4" id="s1" name="API TC1">API TC1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'add_cookie' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'add_location_strategy' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'alert_should_be_present' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'alert_should_not_be_present' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'capture_element_screenshot' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'capture_page_screenshot' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'click_button' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'click_element' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'click_image' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'click_link' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'create_webdriver' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'current_frame_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'current_frame_should_not_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_attribute_value_should_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_should_be_visible' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_should_not_be_visible' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_should_not_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_text_should_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'element_text_should_not_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'frame_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_cookies' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_list_items' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_locations' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_table_cell' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_window_handles' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_window_identifiers' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_window_names' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.430" level="ERROR">Adding keyword 'get_window_size' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'get_window_titles' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'handle_alert' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'input_password' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'input_text' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'input_text_into_alert' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'location_should_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'location_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'log_source' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'open_browser' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_button' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_checkbox' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_element' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_image' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_link' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_list' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_radio_button' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_contain_textfield' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_button' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_checkbox' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_element' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_image' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_link' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_list' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_radio_button' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'page_should_not_contain_textfield' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'press_keys' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'set_window_size' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'submit_form' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'switch_window' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'table_cell_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'table_column_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'table_footer_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'table_header_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'table_row_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'table_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'textarea_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'textarea_value_should_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'textfield_should_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'textfield_value_should_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'title_should_be' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'wait_for_condition' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'wait_until_element_contains' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'wait_until_element_does_not_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'wait_until_element_is_enabled' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.446" level="ERROR">Adding keyword 'wait_until_element_is_not_visible' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.462" level="ERROR">Adding keyword 'wait_until_element_is_visible' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_location_contains' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_location_does_not_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_location_is' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_location_is_not' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_page_contains' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_page_contains_element' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_page_does_not_contain' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+<msg timestamp="20220615 10:38:37.463" level="ERROR">Adding keyword 'wait_until_page_does_not_contain_element' to library 'SeleniumLibrary' failed: Calling dynamic method 'get_keyword_arguments' failed: Return value must be list of strings.</msg>
+</errors>
+</robot>
