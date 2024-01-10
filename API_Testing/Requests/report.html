@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 5.0.1 (Python 3.7.4 on win32)" name="Generator">
+<meta content="Robot Framework 6.1.1 (Python 3.12.1 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -1150,7 +1150,7 @@ window.testdata = function () {
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1629,22 +1629,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,12487],[],[[4,0,0,[],[1,411,8081],[]],[5,0,0,[],[1,8492,2224],[]],[6,0,0,[],[1,10716,532],[]],[7,0,0,[],[1,11248,184],[]],[8,0,0,[],[1,11432,203],[]],[9,0,0,[],[1,11635,852],[]]],[],[6,6,0,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,17561],[],[[4,0,0,[],[1,437,375],[]],[5,0,0,[],[1,816,2366],[]],[6,0,0,[],[1,3183,622],[]],[7,0,0,[],[1,3806,279],[]],[8,0,0,[],[1,4086,296],[]],[9,0,0,[],[0,4384,13177,10],[]]],[],[6,5,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*All Requests","*C:\\Users\\erauaja\\PycharmProjects\\API Testing\\Requests\\All_Requests.robot","*All_Requests.robot","*TC0_Open browser","*TC2_Get_User_info","*TC3_Get_Request_failed","*TC4_Get_Request_List_verification","*TC6_Get_List of Ussers Request","*TC_07_Post Request"]);
+window.output["strings"] = window.output["strings"].concat(["*","*All Requests","*D:\\Personal_Project_Space\\Robot_Framework\\API_Testing\\Requests\\All_Requests.robot","*All_Requests.robot","*TC1_Test_API_Post_Auth","*TC2_Get_User_info","*TC3_Get_Request_failed","*TC4_Get_Request_List_verification","*TC6_Get_List of Ussers Request","*TC_07_Post Request","*ConnectionError: HTTPSConnectionPool(host='api.instantwebtools.net', port=443): Max retries exceeded with url: /v1/airlines (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E0ACC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:12","fail":0,"label":"All Tests","pass":6,"skip":0}],[],[{"elapsed":"00:00:12","fail":0,"id":"s1","label":"All Requests","name":"All Requests","pass":6,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:17","fail":1,"label":"All Tests","pass":5,"skip":0}],[],[{"elapsed":"00:00:18","fail":1,"id":"s1","label":"All Requests","name":"All Requests","pass":5,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1653281456694;
+window.output["baseMillis"] = 1704891068021;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 12503;
+window.output["generated"] = 17576;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1894,8 +1894,8 @@ function searchTests(suitePattern, testPattern, includePattern, excludePattern) 
 function scrollToSelector(base, query) {
     $('#test-details-container').css('min-height', $(window).height());
     var anchor = query ? base + '?' + encodeURIComponent(query) : base;
-    window.location.hash = '';
     window.location.hash = window.prevLocationHash = anchor;
+    document.getElementById('test-details-container').scrollIntoView();
 }
 
 function renderSelector(args, template, stats) {

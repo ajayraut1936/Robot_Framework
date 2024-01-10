@@ -1,256 +1,456 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.4 on win32)" generated="20220523 10:20:56.678" rpa="false" schemaversion="3">
-<suite id="s1" name="All Requests" source="C:\Users\erauaja\PycharmProjects\API Testing\Requests\All_Requests.robot">
-<test id="s1-t1" name="TC0_Open browser" line="19">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.facebook.com/</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220523 10:20:57.105" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com/'.</msg>
-<status status="PASS" starttime="20220523 10:20:57.105" endtime="20220523 10:21:02.093"/>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240110 18:21:08.019" rpa="false" schemaversion="4">
+<suite id="s1" name="All Requests" source="D:\Personal_Project_Space\Robot_Framework\API_Testing\Requests\All_Requests.robot">
+<test id="s1-t1" name="TC1_Test_API_Post_Auth" line="26">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>ajay</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240110 18:21:08.460" level="INFO">Creating Session using : alias=ajay, url=http://restapi.adequateshop.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 18:21:08.458" endtime="20240110 18:21:08.460"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220523 10:21:02.094" endtime="20220523 10:21:02.252"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=Developer5@gmail.com</arg>
+<arg>password=123456</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240110 18:21:08.461" level="INFO">${body} = {'email': 'Developer5@gmail.com', 'password': '123456'}</msg>
+<status status="PASS" starttime="20240110 18:21:08.460" endtime="20240110 18:21:08.461"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name='email']</arg>
-<arg>Ajayraut032@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220523 10:21:02.252" level="INFO">Typing text 'Ajayraut032@gmail.com' into text field '//input[@name='email']'.</msg>
-<status status="PASS" starttime="20220523 10:21:02.252" endtime="20220523 10:21:02.484"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240110 18:21:08.461" level="INFO">${header} = {'Content-Type': 'application/json', 'Authorization': 'Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;'}</msg>
+<status status="PASS" starttime="20240110 18:21:08.461" endtime="20240110 18:21:08.461"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>//input[@name='pass']</arg>
-<arg>Ajay@1998</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220523 10:21:02.492" level="INFO">Typing text 'Ajay@1998' into text field '//input[@name='pass']'.</msg>
-<status status="PASS" starttime="20220523 10:21:02.484" endtime="20220523 10:21:02.726"/>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${res}</var>
+<arg>ajay</arg>
+<arg>/api/authaccount/login</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20240110 18:21:08.462" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240110 18:21:08.706" level="INFO">POST Request : url=http://restapi.adequateshop.com/api/authaccount/login 
+ path_url=/api/authaccount/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;', 'Content-Length': '55'} 
+ body={"email": "Developer5@gmail.com", "password": "123456"} 
+ </msg>
+<msg timestamp="20240110 18:21:08.706" level="INFO">POST Response : url=http://restapi.adequateshop.com/api/authaccount/login 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Date': 'Wed, 10 Jan 2024 12:51:07 GMT', 'Content-Length': '63'} 
+ body={"code":1,"message":"invalid username or password","data":null} 
+ </msg>
+<msg timestamp="20240110 18:21:08.706" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240110 18:21:08.462" endtime="20240110 18:21:08.706"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//button[@name="login"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220523 10:21:02.726" level="INFO">Clicking button '//button[@name="login"]'.</msg>
-<status status="PASS" starttime="20220523 10:21:02.726" endtime="20220523 10:21:02.956"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${res.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:21:08.707" endtime="20240110 18:21:08.710"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220523 10:21:02.956" endtime="20220523 10:21:05.186"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${res.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:21:08.710" endtime="20240110 18:21:08.712"/>
 </kw>
-<status status="PASS" starttime="20220523 10:20:57.105" endtime="20220523 10:21:05.186"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${res.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:21:08.712" endtime="20240110 18:21:08.713"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 18:21:08.714" level="INFO">{"code":1,"message":"invalid username or password","data":null}</msg>
+<status status="PASS" starttime="20240110 18:21:08.714" endtime="20240110 18:21:08.714"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 18:21:08.715" level="INFO">200</msg>
+<status status="PASS" starttime="20240110 18:21:08.715" endtime="20240110 18:21:08.715"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${status}</var>
+<arg>${res.status_code}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240110 18:21:08.716" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20240110 18:21:08.716" endtime="20240110 18:21:08.716"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 18:21:08.717" level="INFO">{'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Date': 'Wed, 10 Jan 2024 12:51:07 GMT', 'Content-Length': '63'}</msg>
+<status status="PASS" starttime="20240110 18:21:08.716" endtime="20240110 18:21:08.717"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${jsonresponse}</var>
+<arg>${res.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20240110 18:21:08.717" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20240110 18:21:08.719" level="INFO">To JSON using : content={"code":1,"message":"invalid username or password","data":null} </msg>
+<msg timestamp="20240110 18:21:08.719" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20240110 18:21:08.719" level="INFO">${jsonresponse} = {'code': 1, 'message': 'invalid username or password', 'data': None}</msg>
+<status status="PASS" starttime="20240110 18:21:08.717" endtime="20240110 18:21:08.719"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${String}</var>
+<arg>${jsonresponse}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:21:08.719" level="INFO">${String} = {'code': 1, 'message': 'invalid username or password', 'data': None}</msg>
+<status status="PASS" starttime="20240110 18:21:08.719" endtime="20240110 18:21:08.719"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<var>${res}</var>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240110 18:21:08.720" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 18:21:08.720" endtime="20240110 18:21:08.720"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${String}</var>
+<arg>${jsonresponse['message']}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:21:08.722" level="INFO">${String} = invalid username or password</msg>
+<status status="PASS" starttime="20240110 18:21:08.720" endtime="20240110 18:21:08.722"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${res}</var>
+<arg>should be equal as strings</arg>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240110 18:21:08.722" endtime="20240110 18:21:08.723"/>
+</kw>
+<msg timestamp="20240110 18:21:08.723" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 18:21:08.722" endtime="20240110 18:21:08.723"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<var>${res}</var>
+<arg>should be equal as strings</arg>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240110 18:21:08.723" endtime="20240110 18:21:08.723"/>
+</kw>
+<msg timestamp="20240110 18:21:08.723" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 18:21:08.723" endtime="20240110 18:21:08.723"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${res}</var>
+<arg>"${status}"=="200"</arg>
+<arg>should be equal as strings</arg>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240110 18:21:08.724" endtime="20240110 18:21:08.724"/>
+</kw>
+<msg timestamp="20240110 18:21:08.724" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 18:21:08.724" endtime="20240110 18:21:08.724"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${res}</var>
+<arg>post request</arg>
+<arg>ajay</arg>
+<arg>/api/authaccount/login</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Post Request" library="RequestsLibrary">
+<arg>ajay</arg>
+<arg>/api/authaccount/login</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20240110 18:21:08.725" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240110 18:21:08.830" level="INFO">POST Request : url=http://restapi.adequateshop.com/api/authaccount/login 
+ path_url=/api/authaccount/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;', 'Content-Length': '55'} 
+ body={"email": "Developer5@gmail.com", "password": "123456"} 
+ </msg>
+<msg timestamp="20240110 18:21:08.830" level="INFO">POST Response : url=http://restapi.adequateshop.com/api/authaccount/login 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Date': 'Wed, 10 Jan 2024 12:51:07 GMT', 'Content-Length': '63'} 
+ body={"code":1,"message":"invalid username or password","data":null} 
+ </msg>
+<status status="PASS" starttime="20240110 18:21:08.725" endtime="20240110 18:21:08.830"/>
+</kw>
+<msg timestamp="20240110 18:21:08.831" level="INFO">${res} = True</msg>
+<status status="PASS" starttime="20240110 18:21:08.725" endtime="20240110 18:21:08.831"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn">
+<var>${res}</var>
+<doc>Executes all the given keywords in a sequence.</doc>
+<msg timestamp="20240110 18:21:08.832" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 18:21:08.832" endtime="20240110 18:21:08.832"/>
+</kw>
+<status status="PASS" starttime="20240110 18:21:08.458" endtime="20240110 18:21:08.833"/>
 </test>
 <test id="s1-t2" name="TC2_Get_User_info" line="53">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>myses</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220523 10:21:05.186" level="INFO">Creating Session using : alias=myses, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220523 10:21:05.186" endtime="20220523 10:21:05.186"/>
+<msg timestamp="20240110 18:21:08.838" level="INFO">Creating Session using : alias=myses, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 18:21:08.838" endtime="20240110 18:21:08.839"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${response}</var>
 <arg>myses</arg>
 <arg>/api/users/${user}</arg>
-<doc>Send a GET request on the session object found using the
-given `alias`</doc>
-<msg timestamp="20220523 10:21:05.387" level="INFO">Get Request using : alias=myses, uri=/api/users/2, headers=None json=None</msg>
-<msg timestamp="20220523 10:21:05.387" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20220523 10:21:05.387" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220523 10:21:05.186" endtime="20220523 10:21:05.387"/>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20240110 18:21:08.840" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:09.194" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240110 18:21:09.195" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 10 Jan 2024 12:51:08 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1704873818&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=n%2Bh5QhIZImBtPGH0A4syKTQPs0gO8qjW9X0Y5MzHGSc%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1704873818&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=n%2Bh5QhIZImBtPGH0A4syKTQPs0gO8qjW9X0Y5MzHGSc%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-pbdwwFo9SKNhD3Lx5iHJyngpq00"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '2827', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '84350cbb3ff2492b-SIN', 'Content-Encoding': 'gzip'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20240110 18:21:09.196" level="INFO">C:\Users\ajayr\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20240110 18:21:09.196" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240110 18:21:08.840" endtime="20240110 18:21:09.196"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220523 10:21:07.392" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220523 10:21:05.387" endtime="20220523 10:21:07.392"/>
+<msg timestamp="20240110 18:21:11.197" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240110 18:21:09.197" endtime="20240110 18:21:11.197"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:07.393" endtime="20220523 10:21:07.393"/>
+<status status="PASS" starttime="20240110 18:21:11.197" endtime="20240110 18:21:11.198"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:07.393" endtime="20220523 10:21:07.393"/>
+<status status="PASS" starttime="20240110 18:21:11.199" endtime="20240110 18:21:11.199"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220523 10:21:07.393" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220523 10:21:07.393" endtime="20220523 10:21:07.393"/>
+<msg timestamp="20240110 18:21:11.200" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20240110 18:21:11.200" endtime="20240110 18:21:11.200"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220523 10:21:07.393" endtime="20220523 10:21:07.393"/>
+<status status="PASS" starttime="20240110 18:21:11.201" endtime="20240110 18:21:11.201"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${content}</var>
 <arg>${response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220523 10:21:07.393" level="INFO">${content} = {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","te...</msg>
-<status status="PASS" starttime="20220523 10:21:07.393" endtime="20220523 10:21:07.393"/>
+<msg timestamp="20240110 18:21:11.202" level="INFO">${content} = {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","te...</msg>
+<status status="PASS" starttime="20240110 18:21:11.201" endtime="20240110 18:21:11.202"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${content}</arg>
 <arg>Janet</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220523 10:21:07.393" endtime="20220523 10:21:07.393"/>
+<status status="PASS" starttime="20240110 18:21:11.202" endtime="20240110 18:21:11.203"/>
 </kw>
-<status status="PASS" starttime="20220523 10:21:05.186" endtime="20220523 10:21:07.410"/>
+<status status="PASS" starttime="20240110 18:21:08.837" endtime="20240110 18:21:11.203"/>
 </test>
 <test id="s1-t3" name="TC3_Get_Request_failed" line="70">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>ajay</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220523 10:21:07.410" level="INFO">Creating Session using : alias=ajay, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220523 10:21:07.410" endtime="20220523 10:21:07.410"/>
+<msg timestamp="20240110 18:21:11.205" level="INFO">Creating Session using : alias=ajay, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 18:21:11.204" endtime="20240110 18:21:11.205"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${get_failed_res}</var>
 <arg>ajay</arg>
 <arg>/api/users/23</arg>
-<doc>Send a GET request on the session object found using the
-given `alias`</doc>
-<msg timestamp="20220523 10:21:07.925" level="INFO">Get Request using : alias=ajay, uri=/api/users/23, headers=None json=None</msg>
-<msg timestamp="20220523 10:21:07.925" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20220523 10:21:07.925" level="INFO">${get_failed_res} = &lt;Response [404]&gt;</msg>
-<status status="PASS" starttime="20220523 10:21:07.410" endtime="20220523 10:21:07.925"/>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20240110 18:21:11.205" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:11.822" level="INFO">GET Request : url=https://reqres.in/api/users/23 
+ path_url=/api/users/23 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240110 18:21:11.822" level="INFO">GET Response : url=https://reqres.in/api/users/23 
+ status=404, reason=Not Found 
+ headers={'Date': 'Wed, 10 Jan 2024 12:51:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1704891071&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Jl6b4kbB5miflvs1kIqxASCUoNZY3gUlYqhXDsWjGkk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1704891071&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Jl6b4kbB5miflvs1kIqxASCUoNZY3gUlYqhXDsWjGkk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'EXPIRED', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '84350cc96a094852-SIN'} 
+ body={} 
+ </msg>
+<msg timestamp="20240110 18:21:11.822" level="INFO">C:\Users\ajayr\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20240110 18:21:11.823" level="INFO">${get_failed_res} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20240110 18:21:11.205" endtime="20240110 18:21:11.823"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${get_failed_res}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:07.925" endtime="20220523 10:21:07.941"/>
+<status status="PASS" starttime="20240110 18:21:11.823" endtime="20240110 18:21:11.824"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status1}</var>
 <arg>${get_failed_res.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220523 10:21:07.942" level="INFO">${status1} = 404</msg>
-<status status="PASS" starttime="20220523 10:21:07.942" endtime="20220523 10:21:07.942"/>
+<msg timestamp="20240110 18:21:11.825" level="INFO">${status1} = 404</msg>
+<status status="PASS" starttime="20240110 18:21:11.824" endtime="20240110 18:21:11.825"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${status1}</arg>
 <arg>404</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220523 10:21:07.942" endtime="20220523 10:21:07.942"/>
+<status status="PASS" starttime="20240110 18:21:11.825" endtime="20240110 18:21:11.825"/>
 </kw>
-<status status="PASS" starttime="20220523 10:21:07.410" endtime="20220523 10:21:07.942"/>
+<status status="PASS" starttime="20240110 18:21:11.204" endtime="20240110 18:21:11.826"/>
 </test>
 <test id="s1-t4" name="TC4_Get_Request_List_verification" line="79">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>ajay1</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220523 10:21:07.942" level="INFO">Creating Session using : alias=ajay1, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220523 10:21:07.942" endtime="20220523 10:21:07.942"/>
+<msg timestamp="20240110 18:21:11.827" level="INFO">Creating Session using : alias=ajay1, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 18:21:11.827" endtime="20240110 18:21:11.827"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${get_list}</var>
 <arg>ajay1</arg>
 <arg>/api/users?page=2</arg>
-<doc>Send a GET request on the session object found using the
-given `alias`</doc>
-<msg timestamp="20220523 10:21:08.126" level="INFO">Get Request using : alias=ajay1, uri=/api/users?page=2, headers=None json=None</msg>
-<msg timestamp="20220523 10:21:08.126" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20220523 10:21:08.126" level="INFO">${get_list} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220523 10:21:07.942" endtime="20220523 10:21:08.126"/>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20240110 18:21:11.828" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:12.104" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240110 18:21:12.104" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 10 Jan 2024 12:51:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1704533490&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=3bSMGclix33VrHnYJNO82cxFPsBnM5nIgFXakwKs75A%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1704533490&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=3bSMGclix33VrHnYJNO82cxFPsBnM5nIgFXakwKs75A%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '889', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '84350ccd7a169e40-SIN', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20240110 18:21:12.104" level="INFO">C:\Users\ajayr\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20240110 18:21:12.104" level="INFO">${get_list} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240110 18:21:11.828" endtime="20240110 18:21:12.104"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${get_list.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:08.126" endtime="20220523 10:21:08.126"/>
+<status status="PASS" starttime="20240110 18:21:12.105" endtime="20240110 18:21:12.106"/>
 </kw>
-<status status="PASS" starttime="20220523 10:21:07.942" endtime="20220523 10:21:08.126"/>
+<status status="PASS" starttime="20240110 18:21:11.827" endtime="20240110 18:21:12.106"/>
 </test>
 <test id="s1-t5" name="TC6_Get_List of Ussers Request" line="91">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>TC6_Session</arg>
 <arg>${TC6_Url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220523 10:21:08.126" level="INFO">Creating Session using : alias=TC6_Session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220523 10:21:08.126" endtime="20220523 10:21:08.126"/>
+<msg timestamp="20240110 18:21:12.109" level="INFO">Creating Session using : alias=TC6_Session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 18:21:12.109" endtime="20240110 18:21:12.109"/>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <var>${Response}</var>
 <arg>TC6_Session</arg>
 <arg>/api/users?page=2</arg>
-<doc>Send a GET request on the session object found using the
-given `alias`</doc>
-<msg timestamp="20220523 10:21:08.313" level="INFO">Get Request using : alias=TC6_Session, uri=/api/users?page=2, headers=None json=None</msg>
-<msg timestamp="20220523 10:21:08.313" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20220523 10:21:08.313" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220523 10:21:08.142" endtime="20220523 10:21:08.313"/>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20240110 18:21:12.109" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:12.383" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240110 18:21:12.383" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 10 Jan 2024 12:51:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1704469210&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=xXZ8t7BMywJ6Jk3q%2FljrKRjLM6NjPOkMO0M5iPyBowk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1704469210&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=xXZ8t7BMywJ6Jk3q%2FljrKRjLM6NjPOkMO0M5iPyBowk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '960', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '84350ccf2c0c5f58-SIN', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20240110 18:21:12.383" level="INFO">C:\Users\ajayr\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20240110 18:21:12.384" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240110 18:21:12.109" endtime="20240110 18:21:12.384"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${Response}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:08.313" endtime="20220523 10:21:08.313"/>
+<status status="PASS" starttime="20240110 18:21:12.385" endtime="20240110 18:21:12.386"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${Response.status_code}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:08.313" level="INFO">200</msg>
-<status status="PASS" starttime="20220523 10:21:08.313" endtime="20220523 10:21:08.313"/>
+<msg timestamp="20240110 18:21:12.388" level="INFO">200</msg>
+<status status="PASS" starttime="20240110 18:21:12.386" endtime="20240110 18:21:12.388"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${Response.content}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:08.329" level="INFO">{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
-<status status="PASS" starttime="20220523 10:21:08.313" endtime="20220523 10:21:08.329"/>
+<msg timestamp="20240110 18:21:12.390" level="INFO">{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<status status="PASS" starttime="20240110 18:21:12.389" endtime="20240110 18:21:12.392"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${Response.headers}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:08.329" level="INFO">{'Date': 'Mon, 23 May 2022 04:51:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '258', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=1EYwWF2H%2Byl%2BkAw0WGY5PpfO0eAegF%2BXIToYamOtmWkZubx5RjmOr975vfKw54Zp13TSrwHxVr49B1Q62JxwTD8a%2BAuyBLnnsn5wRsEgm2KxzDEXxN%2Bdm45jVTU%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '70fb2cbf9ab96ee6-BOM', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}</msg>
-<status status="PASS" starttime="20220523 10:21:08.329" endtime="20220523 10:21:08.329"/>
+<msg timestamp="20240110 18:21:12.394" level="INFO">{'Date': 'Wed, 10 Jan 2024 12:51:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1704469210&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=xXZ8t7BMywJ6Jk3q%2FljrKRjLM6NjPOkMO0M5iPyBowk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1704469210&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=xXZ8t7BMywJ6Jk3q%2FljrKRjLM6NjPOkMO0M5iPyBowk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '960', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '84350ccf2c0c5f58-SIN', 'Content-Encoding': 'gzip'}</msg>
+<status status="PASS" starttime="20240110 18:21:12.393" endtime="20240110 18:21:12.394"/>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <var>${Json_Response}</var>
 <arg>${Response.content}</arg>
-<doc>Convert a string to a JSON object</doc>
-<msg timestamp="20220523 10:21:08.329" level="INFO">To JSON using : content={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} </msg>
-<msg timestamp="20220523 10:21:08.329" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20220523 10:21:08.329" level="INFO">${Json_Response} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
-<status status="PASS" starttime="20220523 10:21:08.329" endtime="20220523 10:21:08.329"/>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20240110 18:21:12.395" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20240110 18:21:12.398" level="INFO">To JSON using : content={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} </msg>
+<msg timestamp="20240110 18:21:12.399" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20240110 18:21:12.399" level="INFO">${Json_Response} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<status status="PASS" starttime="20240110 18:21:12.395" endtime="20240110 18:21:12.399"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${response}</var>
 <arg>${Json_Response['data']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220523 10:21:08.329" level="INFO">${response} = [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', '...</msg>
-<status status="PASS" starttime="20220523 10:21:08.329" endtime="20220523 10:21:08.329"/>
+<msg timestamp="20240110 18:21:12.401" level="INFO">${response} = [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', '...</msg>
+<status status="PASS" starttime="20240110 18:21:12.400" endtime="20240110 18:21:12.401"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:08.329" level="INFO">[{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'last_name': 'Ferguson', 'avatar': 'https://reqres.in/img/faces/8-image.jpg'}, {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}, {'id': 10, 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'last_name': 'Fields', 'avatar': 'https://reqres.in/img/faces/10-image.jpg'}, {'id': 11, 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'last_name': 'Edwards', 'avatar': 'https://reqres.in/img/faces/11-image.jpg'}, {'id': 12, 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'last_name': 'Howell', 'avatar': 'https://reqres.in/img/faces/12-image.jpg'}]</msg>
-<status status="PASS" starttime="20220523 10:21:08.329" endtime="20220523 10:21:08.329"/>
+<msg timestamp="20240110 18:21:12.402" level="INFO">[{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'last_name': 'Ferguson', 'avatar': 'https://reqres.in/img/faces/8-image.jpg'}, {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}, {'id': 10, 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'last_name': 'Fields', 'avatar': 'https://reqres.in/img/faces/10-image.jpg'}, {'id': 11, 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'last_name': 'Edwards', 'avatar': 'https://reqres.in/img/faces/11-image.jpg'}, {'id': 12, 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'last_name': 'Howell', 'avatar': 'https://reqres.in/img/faces/12-image.jpg'}]</msg>
+<status status="PASS" starttime="20240110 18:21:12.402" endtime="20240110 18:21:12.402"/>
 </kw>
-<status status="PASS" starttime="20220523 10:21:08.126" endtime="20220523 10:21:08.329"/>
+<status status="PASS" starttime="20240110 18:21:12.107" endtime="20240110 18:21:12.403"/>
 </test>
 <test id="s1-t6" name="TC_07_Post Request" line="105">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>TC_07</arg>
 <arg>${TC7_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220523 10:21:08.329" level="INFO">Creating Session using : alias=TC_07, url=https://api.instantwebtools.net, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220523 10:21:08.329" endtime="20220523 10:21:08.329"/>
+<msg timestamp="20240110 18:21:12.407" level="INFO">Creating Session using : alias=TC_07, url=https://api.instantwebtools.net, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 18:21:12.406" endtime="20240110 18:21:12.407"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220523 10:21:08.346" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20220523 10:21:08.345" endtime="20220523 10:21:08.346"/>
+<msg timestamp="20240110 18:21:12.409" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20240110 18:21:12.409" endtime="20240110 18:21:12.409"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -258,8 +458,8 @@ given `alias`</doc>
 <arg>trips=250</arg>
 <arg>airline=5}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220523 10:21:08.346" level="INFO">${body} = {'name': 'John Doe', 'trips': '250', 'airline': '5}'}</msg>
-<status status="PASS" starttime="20220523 10:21:08.346" endtime="20220523 10:21:08.346"/>
+<msg timestamp="20240110 18:21:12.411" level="INFO">${body} = {'name': 'John Doe', 'trips': '250', 'airline': '5}'}</msg>
+<status status="PASS" starttime="20240110 18:21:12.410" endtime="20240110 18:21:12.411"/>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <var>${res}</var>
@@ -267,61 +467,70 @@ given `alias`</doc>
 <arg>/v1/airlines</arg>
 <arg>data=${body}</arg>
 <arg>headers=${header}</arg>
-<doc>Send a POST request on the session object found using the
-given `alias`</doc>
-<msg timestamp="20220523 10:21:09.164" level="INFO">Post Request using : alias=TC_07, uri=/v1/airlines, data={"name": "John Doe", "trips": "250", "airline": "5}"}, headers={'Content-Type': 'application/json'}, files=None, allow_redirects=True </msg>
-<msg timestamp="20220523 10:21:09.164" level="INFO">c:\users\erauaja\appdata\local\programs\python\python37\lib\site-packages\urllib3\connectionpool.py:1050: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.instantwebtools.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning,</msg>
-<msg timestamp="20220523 10:21:09.164" level="INFO">${res} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220523 10:21:08.346" endtime="20220523 10:21:09.164"/>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20240110 18:21:12.412" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240110 18:21:15.692" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E0D2E0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /v1/airlines</msg>
+<msg timestamp="20240110 18:21:19.011" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A1BC6FF0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /v1/airlines</msg>
+<msg timestamp="20240110 18:21:22.451" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E085F0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /v1/airlines</msg>
+<msg timestamp="20240110 18:21:25.504" level="FAIL">ConnectionError: HTTPSConnectionPool(host='api.instantwebtools.net', port=443): Max retries exceeded with url: /v1/airlines (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E0ACC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20240110 18:21:12.412" endtime="20240110 18:21:25.582"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${res}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:09.164" endtime="20220523 10:21:09.164"/>
+<status status="NOT RUN" starttime="20240110 18:21:25.582" endtime="20240110 18:21:25.582"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${res.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:09.164" endtime="20220523 10:21:09.164"/>
+<status status="NOT RUN" starttime="20240110 18:21:25.582" endtime="20240110 18:21:25.582"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${res.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220523 10:21:09.164" endtime="20220523 10:21:09.164"/>
+<status status="NOT RUN" starttime="20240110 18:21:25.582" endtime="20240110 18:21:25.582"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${res}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:09.164" level="INFO">&lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220523 10:21:09.164" endtime="20220523 10:21:09.164"/>
+<status status="NOT RUN" starttime="20240110 18:21:25.582" endtime="20240110 18:21:25.582"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${res.content}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:09.164" level="INFO">{"_id":"628b12bea2aa8a73ec6b8113","name":"John Doe","__v":0}</msg>
-<status status="PASS" starttime="20220523 10:21:09.164" endtime="20220523 10:21:09.164"/>
+<status status="NOT RUN" starttime="20240110 18:21:25.582" endtime="20240110 18:21:25.582"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${res.headers}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220523 10:21:09.180" level="INFO">{'Server': 'nginx/1.18.0', 'Date': 'Mon, 23 May 2022 04:51:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '60', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'ETag': 'W/"3c-mTEaQK8tfypBTBn4R0/00q2DLmk"'}</msg>
-<status status="PASS" starttime="20220523 10:21:09.180" endtime="20220523 10:21:09.180"/>
+<status status="NOT RUN" starttime="20240110 18:21:25.582" endtime="20240110 18:21:25.582"/>
 </kw>
-<status status="PASS" starttime="20220523 10:21:08.329" endtime="20220523 10:21:09.181"/>
+<status status="FAIL" starttime="20240110 18:21:12.405" endtime="20240110 18:21:25.582">ConnectionError: HTTPSConnectionPool(host='api.instantwebtools.net', port=443): Max retries exceeded with url: /v1/airlines (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E0ACC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
 </test>
-<status status="PASS" starttime="20220523 10:20:56.694" endtime="20220523 10:21:09.181"/>
+<status status="FAIL" starttime="20240110 18:21:08.021" endtime="20240110 18:21:25.582"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="All Requests">All Requests</stat>
+<stat pass="5" fail="1" skip="0" id="s1" name="All Requests">All Requests</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20240110 18:21:08.462" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240110 18:21:08.717" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20240110 18:21:08.725" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240110 18:21:08.840" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:11.205" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:11.828" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:12.109" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240110 18:21:12.395" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20240110 18:21:12.412" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240110 18:21:15.692" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E0D2E0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /v1/airlines</msg>
+<msg timestamp="20240110 18:21:19.011" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A1BC6FF0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /v1/airlines</msg>
+<msg timestamp="20240110 18:21:22.451" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x00000169A4E085F0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /v1/airlines</msg>
 </errors>
 </robot>
