@@ -36,9 +36,10 @@ TC1_Get_Request
     ${res}      post request  newsession     /api/authaccount/login   data=${body}    headers=${header}
     set global variable        ${res}                    #Set Global Variable into Pychamp
 
-    log to console  ${res.content}
+    log to console  ${res}
     log to console  ${res.content}                      #Print data into Console
     log to console  ${res.headers}
+    log to console  ${res.text}
     LOG             ${res.content}                      #LOG USed for Print any data into report
     LOG             ${res.content}
     LOG             ${res.headers}

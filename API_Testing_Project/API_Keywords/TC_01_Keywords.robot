@@ -24,7 +24,7 @@ Suite_Teardown
 TC_001_SAMPLE
     [Arguments]        ${tc1_url}
     create session   TC_001     ${tc1_url}
-    ${res}=    get request      TC_001      /api/studentsDetails/
+    ${res}=    GET On Session      TC_001      /api/studentsDetails/
     log to console      ${res}
     log                 ${res.status_code}
     log                 ${res.headers}
