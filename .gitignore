@@ -1,2 +1,6 @@
 *.log
 *.png
+
+..\Robot_Framework\GUI_Testing\TestCases\*.log
+
+..\Robot_Framework\GUI_Testing\TestCases\*.png
