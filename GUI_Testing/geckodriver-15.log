@@ -1,0 +1,14 @@
+1707481678279	geckodriver	INFO	Listening on 127.0.0.1:54092
+1707481681391	mozrunner::runner	INFO	Running command: "C:\\Users\\ajayr\\.cache\\selenium\\firefox\\win64\\122.0.1\\firefox.exe" "--marionette" "--remote-debuggin ... 3" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ajayr\\AppData\\Local\\Temp\\rust_mozprofileiKRNu7"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1707481681733	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1707481681846	Marionette	INFO	Listening on port 54101
+WebDriver BiDi listening on ws://127.0.0.1:54093
+Read port: 54101
+1707481682042	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:54093/devtools/browser/299d915b-e693-4bf5-b487-8c6506731a17
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+1707481693793	Marionette	INFO	Stopped listening on port 54101
+Dynamically enable window occlusion 1

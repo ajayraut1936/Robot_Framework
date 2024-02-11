@@ -1,0 +1,21 @@
+1707482771897	geckodriver	INFO	Listening on 127.0.0.1:55880
+1707482775005	mozrunner::runner	INFO	Running command: "C:\\Users\\ajayr\\.cache\\selenium\\firefox\\win64\\122.0.1\\firefox.exe" "--marionette" "--remote-debuggin ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ajayr\\AppData\\Local\\Temp\\rust_mozprofilenV8hbm"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1707482775323	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1707482775439	Marionette	INFO	Listening on port 55889
+WebDriver BiDi listening on ws://127.0.0.1:55881
+Read port: 55889
+1707482775627	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:55881/devtools/browser/28e29f04-8083-4bbc-b8c0-44ab5171b515
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+1707482782703	Marionette	INFO	Stopped listening on port 55889
+JavaScript warning: https://www.gstatic.com/og/_/js/k=og.qtm.en_US.cuMvG2lQ980.2019.O/rt=j/m=qabr,q_dnp,qcwid,qapid,q_dg/exm=qaaw,qadd,qaid,qein,qhaw,qhba,qhbr,qhch,qhga,qhid,qhin/d=1/ed=1/rs=AA2YrTuKAn3-aelv4toOlCHsuXvLz49A7Q, line 495: Script terminated by timeout at:
+sp@https://www.gstatic.com/og/_/js/k=og.qtm.en_US.cuMvG2lQ980.2019.O/rt=j/m=qabr,q_dnp,qcwid,qapid,q_dg/exm=qaaw,qadd,qaid,qein,qhaw,qhba,qhbr,qhch,qhga,qhid,qhin/d=1/ed=1/rs=AA2YrTuKAn3-aelv4toOlCHsuXvLz49A7Q:495:1228
+tp@https://www.gstatic.com/og/_/js/k=og.qtm.en_US.cuMvG2lQ980.2019.O/rt=j/m=qabr,q_dnp,qcwid,qapid,q_dg/exm=qaaw,qadd,qaid,qein,qhaw,qhba,qhbr,qhch,qhga,qhid,qhin/d=1/ed=1/rs=AA2YrTuKAn3-aelv4toOlCHsuXvLz49A7Q:495:998
+Tp/P[Z]@https://www.gstatic.com/og/_/js/k=og.qtm.en_US.cuMvG2lQ980.2019.O/rt=j/m=qabr,q_dnp,qcwid,qapid,q_dg/exm=qaaw,qadd,qaid,qein,qhaw,qhba,qhbr,qhch,qhga,qhid,qhin/d=1/ed=1/rs=AA2YrTuKAn3-aelv4toOlCHsuXvLz49A7Q:504:72
+Tp/lp[db]@https://www.gstatic.com/og/_/js/k=og.qtm.en_US.cuMvG2lQ980.2019.O/rt=j/m=qabr,q_dnp,qcwid,qapid,q_dg/exm=qaaw,qadd,qaid,qein,qhaw,qhba,qhbr,qhch,qhga,qhid,qhin/d=1/ed=1/rs=AA2YrTuKAn3-aelv4toOlCHsuXvLz49A7Q:504:321
+@https://apis.google.com/_/scs/abc-static/_/js/k=gapi.gapi.en.GsbA68hXs80.O/m=gapi_iframes,googleapis_client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo899t-H8Lxb3OqzMDuPn6TV_i36ag/cb=gapi.loaded_0:1:6
+
+Dynamically enable window occlusion 1

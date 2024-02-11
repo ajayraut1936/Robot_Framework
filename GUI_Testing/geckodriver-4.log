@@ -1,0 +1,19 @@
+1707479296782	geckodriver	INFO	Listening on 127.0.0.1:50280
+1707479299828	mozrunner::runner	INFO	Running command: "C:\\Users\\ajayr\\.cache\\selenium\\firefox\\win64\\122.0.1\\firefox.exe" "--marionette" "--remote-debuggin ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ajayr\\AppData\\Local\\Temp\\rust_mozprofiledUzujT"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1707479300183	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1707479300420	Marionette	INFO	Listening on port 50290
+WebDriver BiDi listening on ws://127.0.0.1:50281
+Read port: 50290
+1707479300654	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:50281/devtools/browser/c9791fb3-4bbe-4633-b848-a106090c4b7c
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3i_Ou4/yY/l/en_GB/tAG26I6CPbj.js?_nc_x=Ij3Wp8lg5Kz, line 21: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1707479330273	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/y8/r/Qz5TLhG2cA9.js?_nc_x=Ij3Wp8lg5Kz, line 282: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/y8/r/Qz5TLhG2cA9.js?_nc_x=Ij3Wp8lg5Kz:282:113
+
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 573: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1707480073490	Marionette	INFO	Stopped listening on port 50290
+Dynamically enable window occlusion 1

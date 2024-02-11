@@ -1,0 +1,8 @@
+# need to install yaml then it will work 
+# pip install pyyaml
+
+TC_02: 
+  url: 'https://www.saucedemo.com/'
+  username: 'standard_user'
+  password: 'secret_sauce'
+ajay: hehe

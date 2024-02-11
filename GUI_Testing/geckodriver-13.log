@@ -1,0 +1,21 @@
+1707481450974	geckodriver	INFO	Listening on 127.0.0.1:53851
+1707481454080	mozrunner::runner	INFO	Running command: "C:\\Users\\ajayr\\.cache\\selenium\\firefox\\win64\\122.0.1\\firefox.exe" "--marionette" "--remote-debuggin ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ajayr\\AppData\\Local\\Temp\\rust_mozprofilesqITBA"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1707481454376	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1707481454489	Marionette	INFO	Listening on port 53861
+WebDriver BiDi listening on ws://127.0.0.1:53852
+Read port: 53861
+1707481454668	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:53852/devtools/browser/314b333e-4ea8-4034-adec-1b977328c0be
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+1707481485103	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-49N6BP20B1&l=dataLayer&cx=c, line 466: Script terminated by timeout at:
+aa.Dh@https://www.googletagmanager.com/gtag/js?id=G-49N6BP20B1&l=dataLayer&cx=c:466:42
+get@https://www.googletagmanager.com/gtag/js?id=G-49N6BP20B1&l=dataLayer&cx=c:464:119
+stop@https://www.googletagmanager.com/gtag/js?id=G-49N6BP20B1&l=dataLayer&cx=c:464:87
+aa.Zk/c/<@https://www.googletagmanager.com/gtag/js?id=G-49N6BP20B1&l=dataLayer&cx=c:464:412
+
+1707481739066	Marionette	INFO	Stopped listening on port 53861
+Dynamically enable window occlusion 1

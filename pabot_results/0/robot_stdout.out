@@ -1,0 +1,171 @@
+==============================================================================
+File2 All GUI Case                                                            
+==============================================================================
+TC_03_part                                                            | PASS |
+------------------------------------------------------------------------------
+TC_04_Working with radio button and radio boxes                       | PASS |
+------------------------------------------------------------------------------
+TC_05 Drop down list select and unselect                              | PASS |
+------------------------------------------------------------------------------
+TC_06 waits_Selenium Timeout                                            
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot:75
+    T:  TC_06 waits_Selenium Timeout    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot:87
+      Wait Until Page Contains    Registers
+______________________________________________________________________________
+| FAIL |
+Text 'Registers' did not appear in 15 seconds.
+------------------------------------------------------------------------------
+TC_06 waits_Implicite Wait                                              
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot:96
+    T:  TC_06 waits_Implicite Wait    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot:113
+      Input Text    //*[@name="ConfirmPasswords"]    Ajay111222@
+______________________________________________________________________________
+| FAIL |
+Element with locator '//*[@name="ConfirmPasswords"]' not found.
+------------------------------------------------------------------------------
+TC_06 waits_selemnium_Speed                                           | PASS |
+------------------------------------------------------------------------------
+TC_07 Close single and multiple browser                               | PASS |
+------------------------------------------------------------------------------
+TC_08_Alert Handling in Selenium                                      | PASS |
+------------------------------------------------------------------------------
+TC_09_Handle_iFranms                                                  | PASS |
+------------------------------------------------------------------------------
+TC_10 Tabbed windows                                                  | PASS |
+------------------------------------------------------------------------------
+TC_10 switching to multiple brousers                                    
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot:214
+    T:  TC_10 switching to multiple brousers    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot:226
+      Get Title    
+______________________________________________________________________________
+| FAIL |
+MaxRetryError: HTTPConnectionPool(host='localhost', port=49323): Max retries exceeded with url: /session/cebe4930-7123-4d0e-9557-0ee2b698e1c3/title (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000202F4BC7EC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+------------------------------------------------------------------------------
+TC_11 Browser Navigation keywords                                     | PASS |
+------------------------------------------------------------------------------
+TC_12 Screen shots                                                    | PASS |
+------------------------------------------------------------------------------
+TC_13 Mouse Navigation Actions                                        | PASS |
+------------------------------------------------------------------------------
+TC_14 Scrolling with JavascriptExecutor                               | PASS |
+------------------------------------------------------------------------------
+TC_15 For Loop in Robot Framework                                     1nd For loop
+1
+2
+3
+4
+5
+6
+7
+8
+9
+2nd For loop
+
+5
+6
+8
+2
+3
+5
+6
+1
+6
+3
+3rd For loop
+
+Ajay
+Chaitu
+2
+3
+5
+6
+8
+ajay
+chaitu
+loves
+me
+or
+other
+guy
+
+Original List is :
+2
+5
+6
+7
+6
+4
+5
+2
+5
+1
+0
+7
+
+ It will exit on first occurenc of 4
+2
+5
+6
+7
+6
+4
+| PASS |
+------------------------------------------------------------------------------
+TC_16 count no of links and extract links                             7
+Name:
+Email:
+Phone:
+Address:
+Gender:
+Male
+Female
+Days:
+Sunday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Country:
+United States
+Canada
+United Kingdom
+Germany
+France
+Australia
+Japan
+China
+Brazil
+India
+Colors:
+Red
+Blue
+Green
+Yellow
+White
+| PASS |
+------------------------------------------------------------------------------
+TC_17 Works on HTML table                                             Total rows of table: 7
+Total no of colums 4
+| PASS |
+------------------------------------------------------------------------------
+TC_18 POM in Selenium                                                 | FAIL |
+Test cannot be empty.
+------------------------------------------------------------------------------
+File2 All GUI Case                                                    | FAIL |
+19 tests, 15 passed, 4 failed
+==============================================================================
+Output:  D:\Personal_Project_Space\Robot_Framework\pabot_results\0\output.xml
