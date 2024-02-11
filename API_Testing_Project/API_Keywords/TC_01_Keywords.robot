@@ -4,11 +4,8 @@ Library     Collections
 Library     String
 Library     BuiltIn
 Library     JSONLibrary
-Library         json
-Library         ../../PythonLib/utilitylibrary.py
-Resource        ../Config/CommonData.txt
-Library         ./../TestData/testdata_generic.json
-Resource        ./../TestData/testdata_generic.json
+
+
 
 *** Variables ***
 ${testdata_generic}                         ./../TestData/testdata_generic.json
