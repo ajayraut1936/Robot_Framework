@@ -96,9 +96,10 @@ TC_06 waits_Selenium Timeout
 TC_06 waits_Implicite Wait
 
     # Selenium Speed, Selenium Timeout, Implicite Wait, Sleep
-    Open Browser    https://demowebshop.tricentis.com/
+    Open Browser    https://demowebshop.tricentis.com/    
     Maximize Browser Window
     
+
     Set Selenium Implicit Wait    10s 
     ${implicite_wait}   Get Selenium Implicit Wait          # it will be appliacable for all below steps and wait for till 10s 
     log     ${implicite_wait}
