@@ -1,5 +1,6 @@
 {
-    "Version": "1.0.0",
-    "Request-Input": {"USER-ID": "Teri_User_ID", "URL": "http://thetestingworldapi.com"}
-
+    "TC_post":{
+        "name": "Ajay Raut",
+        "job": "IT Test Engineer"
+    }
 }

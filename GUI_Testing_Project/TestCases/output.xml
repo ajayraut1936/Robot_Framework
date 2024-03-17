@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240307 22:55:33.697" rpa="false" schemaversion="4">
+<suite id="s1" name="File2 All GUI Case" source="D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot">
+<test id="s1-t1" name="TC_switch" line="426">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://testautomationpractice.blogspot.com/</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240307 22:55:33.934" level="INFO">Opening browser 'edge' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<status status="PASS" starttime="20240307 22:55:33.934" endtime="20240307 22:55:43.338"/>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<msg timestamp="20240307 22:55:43.353" level="INFO">Altogether 1 item.
+1: Automation Testing Practice</msg>
+<msg timestamp="20240307 22:55:43.353" level="INFO">${title} = ['Automation Testing Practice']</msg>
+<status status="PASS" starttime="20240307 22:55:43.340" endtime="20240307 22:55:43.353"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:43.353" level="INFO">['Automation Testing Practice']</msg>
+<status status="PASS" starttime="20240307 22:55:43.353" endtime="20240307 22:55:43.353"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${var1}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20240307 22:55:43.353" level="INFO">${var1} = ['7743186D5D46578ED8B8A518BB7EF49D']</msg>
+<status status="PASS" starttime="20240307 22:55:43.353" endtime="20240307 22:55:43.353"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:43.353" level="INFO">['7743186D5D46578ED8B8A518BB7EF49D']</msg>
+<status status="PASS" starttime="20240307 22:55:43.353" endtime="20240307 22:55:43.353"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240307 22:55:45.353" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240307 22:55:43.353" endtime="20240307 22:55:45.353"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.facebook.com/</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240307 22:55:45.353" level="INFO">Opening browser 'edge' to base url 'https://www.facebook.com/'.</msg>
+<status status="PASS" starttime="20240307 22:55:45.353" endtime="20240307 22:55:50.565"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240307 22:55:52.566" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240307 22:55:50.565" endtime="20240307 22:55:52.566"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${var2}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20240307 22:55:52.569" level="INFO">${var2} = ['A000A31A4FD67059BEC56CDB44E1BBE0']</msg>
+<status status="PASS" starttime="20240307 22:55:52.566" endtime="20240307 22:55:52.569"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:52.571" level="INFO">['A000A31A4FD67059BEC56CDB44E1BBE0']</msg>
+<status status="PASS" starttime="20240307 22:55:52.570" endtime="20240307 22:55:52.571"/>
+</kw>
+<kw name="Get Window Titles" library="SeleniumLibrary">
+<var>${var}</var>
+<doc>Returns and logs titles of all windows of the selected browser.</doc>
+<msg timestamp="20240307 22:55:52.609" level="INFO">Altogether 1 item.
+1: Facebook – log in or sign up</msg>
+<msg timestamp="20240307 22:55:52.609" level="INFO">${var} = ['Facebook – log in or sign up']</msg>
+<status status="PASS" starttime="20240307 22:55:52.571" endtime="20240307 22:55:52.609"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:52.609" level="INFO">['Facebook – log in or sign up']</msg>
+<status status="PASS" starttime="20240307 22:55:52.609" endtime="20240307 22:55:52.609"/>
+</kw>
+<kw name="Get Window Names" library="SeleniumLibrary">
+<var>${var}</var>
+<doc>Returns and logs names of all windows of the selected browser.</doc>
+<msg timestamp="20240307 22:55:52.631" level="INFO">Altogether 1 item.
+1: undefined</msg>
+<msg timestamp="20240307 22:55:52.631" level="INFO">${var} = ['undefined']</msg>
+<status status="PASS" starttime="20240307 22:55:52.609" endtime="20240307 22:55:52.631"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:52.633" level="INFO">['undefined']</msg>
+<status status="PASS" starttime="20240307 22:55:52.632" endtime="20240307 22:55:52.633"/>
+</kw>
+<kw name="Get Window Position" library="SeleniumLibrary">
+<var>${var}</var>
+<doc>Returns current window position.</doc>
+<msg timestamp="20240307 22:55:52.640" level="INFO">${var} = (10, 10)</msg>
+<status status="PASS" starttime="20240307 22:55:52.634" endtime="20240307 22:55:52.640"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:52.641" level="INFO">(10, 10)</msg>
+<status status="PASS" starttime="20240307 22:55:52.640" endtime="20240307 22:55:52.641"/>
+</kw>
+<kw name="Get Window Size" library="SeleniumLibrary">
+<var>${var}</var>
+<doc>Returns current window width and height as integers.</doc>
+<msg timestamp="20240307 22:55:52.644" level="INFO">${var} = (1050, 652)</msg>
+<status status="PASS" starttime="20240307 22:55:52.641" endtime="20240307 22:55:52.644"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240307 22:55:52.644" level="INFO">(1050, 652)</msg>
+<status status="PASS" starttime="20240307 22:55:52.644" endtime="20240307 22:55:52.645"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>${title}[0]</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<msg timestamp="20240307 22:55:52.782" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240307 22:55:52.782" level="FAIL">No browser with index or alias 'Automation Testing Practice' found.</msg>
+<status status="FAIL" starttime="20240307 22:55:52.645" endtime="20240307 22:55:52.785"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240307 22:55:52.786" endtime="20240307 22:55:52.786"/>
+</kw>
+<status status="FAIL" starttime="20240307 22:55:33.934" endtime="20240307 22:55:52.786">No browser with index or alias 'Automation Testing Practice' found.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240307 22:55:52.788" endtime="20240307 22:55:54.982"/>
+</kw>
+<status status="FAIL" starttime="20240307 22:55:33.697" endtime="20240307 22:55:54.982"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="File2 All GUI Case">File2 All GUI Case</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

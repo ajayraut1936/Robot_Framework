@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240221 19:14:57.302" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Framework" source="D:\Personal_Project_Space\Robot_Framework">
+<suite id="s1-s1" name="GUI Testing" source="D:\Personal_Project_Space\Robot_Framework\GUI_Testing">
+<suite id="s1-s1-s1" name="TestCases" source="D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases">
+<suite id="s1-s1-s1-s1" name="File2 All GUI Case" source="D:\Personal_Project_Space\Robot_Framework\GUI_Testing\TestCases\File2_All_GUI_Case.robot">
+<test id="s1-s1-s1-s1-t1" name="TC_03_part" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demo.nopcommerce.com/</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240221 19:14:57.721" level="INFO">Opening browser 'firefox' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20240221 19:14:57.707" endtime="20240221 19:15:32.857"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${Title_page}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20240221 19:15:32.875" level="INFO">${Title_page} = nopCommerce demo store</msg>
+<status status="PASS" starttime="20240221 19:15:32.863" endtime="20240221 19:15:32.875"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Title_page}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240221 19:15:32.879" level="INFO">nopCommerce demo store</msg>
+<status status="PASS" starttime="20240221 19:15:32.879" endtime="20240221 19:15:32.879"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>nopCommerce demo store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20240221 19:15:32.899" level="INFO">Page title is 'nopCommerce demo store'.</msg>
+<status status="PASS" starttime="20240221 19:15:32.879" endtime="20240221 19:15:32.899"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//*[text()="Log in"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240221 19:15:32.907" level="INFO">Clicking link '//*[text()="Log in"]'.</msg>
+<status status="PASS" starttime="20240221 19:15:32.903" endtime="20240221 19:15:34.400"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_id}</var>
+<arg>//*[@id="Email"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240221 19:15:34.400" level="INFO">${email_id} = //*[@id="Email"]</msg>
+<status status="PASS" starttime="20240221 19:15:34.400" endtime="20240221 19:15:34.400"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_pass}</var>
+<arg>//*[@id="Password"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240221 19:15:34.406" level="INFO">${email_pass} = //*[@id="Password"]</msg>
+<status status="PASS" starttime="20240221 19:15:34.406" endtime="20240221 19:15:34.406"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email_pass_invalid}</var>
+<arg>//*[@id="Password"][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240221 19:15:34.413" level="INFO">${email_pass_invalid} = //*[@id="Password"][0]</msg>
+<status status="PASS" starttime="20240221 19:15:34.412" endtime="20240221 19:15:34.413"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${email_id}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240221 19:15:34.413" endtime="20240221 19:15:34.726"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${email_id}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240221 19:15:34.749" level="INFO">Element '//*[@id="Email"]' is displayed.</msg>
+<status status="PASS" starttime="20240221 19:15:34.727" endtime="20240221 19:15:34.750"/>
+</kw>
+<kw name="Element Should Be Focused" library="SeleniumLibrary">
+<arg>${email_id}</arg>
+<doc>Verifies that element identified by ``locator`` is focused.</doc>
+<status status="PASS" starttime="20240221 19:15:34.750" endtime="20240221 19:15:34.760"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${email_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240221 19:15:34.781" level="INFO">Element '//*[@id="Password"]' is displayed.</msg>
+<status status="PASS" starttime="20240221 19:15:34.760" endtime="20240221 19:15:34.783"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${email_pass}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240221 19:15:34.783" endtime="20240221 19:15:34.813"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${email_pass_invalid}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20240221 19:15:34.819" level="INFO">Element '//*[@id="Password"][0]' did not exist.</msg>
+<status status="PASS" starttime="20240221 19:15:34.813" endtime="20240221 19:15:34.819"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_id}</arg>
+<arg>ajayraut032</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240221 19:15:34.822" level="INFO">Typing text 'ajayraut032' into text field '//*[@id="Email"]'.</msg>
+<status status="PASS" starttime="20240221 19:15:34.821" endtime="20240221 19:15:34.847"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240221 19:15:39.849" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240221 19:15:34.848" endtime="20240221 19:15:39.849"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${email_id}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240221 19:15:39.850" endtime="20240221 19:15:39.922"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240221 19:15:44.924" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240221 19:15:39.923" endtime="20240221 19:15:44.924"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240221 19:15:44.924" endtime="20240221 19:15:48.773"/>
+</kw>
+<status status="PASS" starttime="20240221 19:14:57.707" endtime="20240221 19:15:48.774"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240221 19:15:48.778" endtime="20240221 19:15:48.780"/>
+</kw>
+<status status="PASS" starttime="20240221 19:14:57.358" endtime="20240221 19:15:48.780"/>
+</suite>
+<status status="PASS" starttime="20240221 19:14:57.353" endtime="20240221 19:15:48.786"/>
+</suite>
+<status status="PASS" starttime="20240221 19:14:57.350" endtime="20240221 19:15:48.793"/>
+</suite>
+<status status="PASS" starttime="20240221 19:14:57.318" endtime="20240221 19:15:48.798"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Framework">Robot Framework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="GUI Testing">Robot Framework.GUI Testing</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TestCases">Robot Framework.GUI Testing.TestCases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="File2 All GUI Case">Robot Framework.GUI Testing.TestCases.File2 All GUI Case</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

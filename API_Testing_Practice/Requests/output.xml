@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240110 20:20:47.233" rpa="false" schemaversion="4">
+<suite id="s1" name="All Requests" source="D:\Personal_Project_Space\Robot_Framework\API_Testing\Requests\All_Requests.robot">
+<test id="s1-t1" name="TC1_Test_API_Post_Auth" line="33">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>ajay</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240110 20:20:47.626" level="INFO">Creating Session using : alias=ajay, url=http://restapi.adequateshop.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240110 20:20:47.626" endtime="20240110 20:20:47.626"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${body}</var>
+<arg>{'email':'Developer5@gmail.com', 'password':'123456'}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240110 20:20:47.626" level="INFO">${body} = {'email':'Developer5@gmail.com', 'password':'123456'}</msg>
+<status status="PASS" starttime="20240110 20:20:47.626" endtime="20240110 20:20:47.626"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240110 20:20:47.626" level="INFO">${header} = {'Content-Type': 'application/json', 'Authorization': 'Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;'}</msg>
+<status status="PASS" starttime="20240110 20:20:47.626" endtime="20240110 20:20:47.626"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${res}</var>
+<arg>ajay</arg>
+<arg>/api/authaccount/login</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20240110 20:20:47.740" level="INFO">POST Request : url=http://restapi.adequateshop.com/api/authaccount/login 
+ path_url=/api/authaccount/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;', 'Content-Length': '53'} 
+ body={'email':'Developer5@gmail.com', 'password':'123456'} 
+ </msg>
+<msg timestamp="20240110 20:20:47.740" level="INFO">POST Response : url=http://restapi.adequateshop.com/api/authaccount/login 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Date': 'Wed, 10 Jan 2024 14:50:47 GMT', 'Content-Length': '63'} 
+ body={"code":1,"message":"invalid username or password","data":null} 
+ </msg>
+<msg timestamp="20240110 20:20:47.741" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240110 20:20:47.626" endtime="20240110 20:20:47.741"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${res.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 20:20:47.742" endtime="20240110 20:20:47.744"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${res.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 20:20:47.745" endtime="20240110 20:20:47.747"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${res.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 20:20:47.748" endtime="20240110 20:20:47.750"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 20:20:47.752" level="INFO">{"code":1,"message":"invalid username or password","data":null}</msg>
+<status status="PASS" starttime="20240110 20:20:47.751" endtime="20240110 20:20:47.752"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 20:20:47.754" level="INFO">200</msg>
+<status status="PASS" starttime="20240110 20:20:47.753" endtime="20240110 20:20:47.754"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${status}</var>
+<arg>${res.status_code}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240110 20:20:47.757" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20240110 20:20:47.755" endtime="20240110 20:20:47.757"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240110 20:20:47.759" level="INFO">{'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Date': 'Wed, 10 Jan 2024 14:50:47 GMT', 'Content-Length': '63'}</msg>
+<status status="PASS" starttime="20240110 20:20:47.758" endtime="20240110 20:20:47.759"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsonresponse}</var>
+<arg>${res.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20240110 20:20:47.762" level="INFO">${jsonresponse} = {'code': 1, 'message': 'invalid username or password', 'data': None}</msg>
+<status status="PASS" starttime="20240110 20:20:47.760" endtime="20240110 20:20:47.762"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${String}</var>
+<arg>${jsonresponse}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 20:20:47.762" level="INFO">${String} = {'code': 1, 'message': 'invalid username or password', 'data': None}</msg>
+<status status="PASS" starttime="20240110 20:20:47.762" endtime="20240110 20:20:47.762"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<var>${res}</var>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240110 20:20:47.762" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 20:20:47.762" endtime="20240110 20:20:47.762"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${String}</var>
+<arg>${jsonresponse['message']}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 20:20:47.767" level="INFO">${String} = invalid username or password</msg>
+<status status="PASS" starttime="20240110 20:20:47.762" endtime="20240110 20:20:47.767"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<var>${res}</var>
+<arg>should be equal as strings</arg>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240110 20:20:47.768" endtime="20240110 20:20:47.769"/>
+</kw>
+<msg timestamp="20240110 20:20:47.769" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 20:20:47.768" endtime="20240110 20:20:47.769"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<var>${res}</var>
+<arg>should be equal as strings</arg>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240110 20:20:47.770" endtime="20240110 20:20:47.771"/>
+</kw>
+<msg timestamp="20240110 20:20:47.771" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 20:20:47.770" endtime="20240110 20:20:47.771"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${res}</var>
+<arg>"${status}"=="200"</arg>
+<arg>should be equal as strings</arg>
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${String}</arg>
+<arg>invalid username or password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240110 20:20:47.771" endtime="20240110 20:20:47.771"/>
+</kw>
+<msg timestamp="20240110 20:20:47.771" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 20:20:47.771" endtime="20240110 20:20:47.771"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${res}</var>
+<arg>POST On Session</arg>
+<arg>ajay</arg>
+<arg>/api/authaccount/login</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>ajay</arg>
+<arg>/api/authaccount/login</arg>
+<arg>data=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20240110 20:20:47.834" level="INFO">POST Request : url=http://restapi.adequateshop.com/api/authaccount/login 
+ path_url=/api/authaccount/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer&lt;3030401c-c5a5-43c8-8b73-2ab9e6f2ca22&gt;', 'Content-Length': '53'} 
+ body={'email':'Developer5@gmail.com', 'password':'123456'} 
+ </msg>
+<msg timestamp="20240110 20:20:47.834" level="INFO">POST Response : url=http://restapi.adequateshop.com/api/authaccount/login 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'Date': 'Wed, 10 Jan 2024 14:50:47 GMT', 'Content-Length': '63'} 
+ body={"code":1,"message":"invalid username or password","data":null} 
+ </msg>
+<status status="PASS" starttime="20240110 20:20:47.771" endtime="20240110 20:20:47.834"/>
+</kw>
+<msg timestamp="20240110 20:20:47.834" level="INFO">${res} = True</msg>
+<status status="PASS" starttime="20240110 20:20:47.771" endtime="20240110 20:20:47.834"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn">
+<var>${res}</var>
+<doc>Executes all the given keywords in a sequence.</doc>
+<msg timestamp="20240110 20:20:47.835" level="INFO">${res} = None</msg>
+<status status="PASS" starttime="20240110 20:20:47.835" endtime="20240110 20:20:47.835"/>
+</kw>
+<status status="PASS" starttime="20240110 20:20:47.626" endtime="20240110 20:20:47.837"/>
+</test>
+<status status="PASS" starttime="20240110 20:20:47.233" endtime="20240110 20:20:47.837"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="All Requests">All Requests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
